@@ -1,9 +1,19 @@
+// We will need to research this more. For the moment, I'm adding stuff that Keith shared during class. This is to ensure 1. we do not share our passwords, 2. we can use our individual passwords. 
+
 {
   "development": {
+<<<<<<< HEAD
     "username": "root",
     "password": null,
     "database": "shamber_db",
     "host": "localhost",
+=======
+    "use_env_variable":"DATABASE_URL",
+    // "username": "root",
+    // "password": null,
+    // "database": "exampledb",
+    // "host": "localhost",
+>>>>>>> 2fa808a26765580ae9f4bb408f4016e2404306b8
     "dialect": "mysql"
   },
   "test": {
