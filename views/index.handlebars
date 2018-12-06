@@ -1,25 +1,48 @@
-<div id="home">
+<div class="jumbotron text-center bgbanner" style="margin-bottom:0">
+  <h1>Welcome to the Shamber</h1>
+  <p>We deal in shame, and pro-shame accessories.</p>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">The Shambers</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Share-a-Shame</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Wall of Shame</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div id="home" class="bg">
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
+        <h2>Welcome to The Shamber</h2>
+        <form class="clearfix mb-4">
           <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            <label for="user_name">Your Name</label>
+            <input type="text" id="user_name" class="form-control" aria-describedby="user_name" placeholder="Enter Name">
           </div>
           <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+            <label for="user_shame">Your Shame</label>
+            <textarea class="form-control" id="user_shame" aria-describedby="user_shame" placeholder="I can't believe you've done this"></textarea>
           </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
+          <button id="submit_btn" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
+        <h3>Names and Shames</h3>
+        <ul id="shame-list" class="list-group">
+          {{#each entries}}
           <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
+            <a href="entries/{{this.id}}">{{this.text}}</a>
             <button class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}
@@ -30,4 +53,4 @@
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<script src="js/index.js"></script>
