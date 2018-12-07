@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>The Shamber</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="js/styles/styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid text-center bgbanner" style="margin-bottom:0">
+        <div class="container">
+            <h1>Welcome to the Shamber</h1>
+            <p>We deal in shame, and pro-shame accessories.</p>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">The Shambers</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="1">Share-a-Shame</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="2">Wall of Shame</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="3">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="home" class="bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <h3 class="text-center">Names and Shames: New</h3>
+                    <ul id="shame-list" class="list-group scroll">
+                        <span class="rounded-0"></span>
+                        <!--{{#each entries}}-->
+                        <li data-id="{{this.id}}" class="list-group-item">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Nathan Kloer</h5>
+                                    <h4 class="card-text">The first time I climbed a rock wall, I cried.</h4>
+                                </div>
+                                <h6 class="mb-2 text-muted text-right">Added 12/06/2018</h6>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Laura Fairfeild</h5>
+                                    <h4 class="card-text">I still can't tell my left from my right sometimes.</h4>
+                                </div>
+                                <h6 class="mb-2 text-muted text-right">Added 12/06/2018</h6>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Douglas Toog</h5>
+                                    <h4 class="card-text">I wet the bed until I was 8!</h4>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted text-right">Added 12/06/2018</h6>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{this.name}}</h5>
+                                    <h4 class="card-text">{{this.shame}}</h4>
+                                </div>
+                                <h6 class="mb-2 text-muted text-right">Added {{this.dateAdded}}</h6>
+                            </div>
+                        </li>
+                        <!--{{/each}}-->
+                        <span class="rounded-0"></span>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+                <div class="row">
+                    <div class="col-8 offset-2">
+                        <h3 class="text-center">Names and Shames: Top</h3>
+                        <ul id="shame-list" class="list-group scroll">
+                            <span class="rounded-0"></span>
+                            <!--{{#each entries}}-->
+                            <li data-id="{{this.id}}" class="list-group-item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nathan Kloer</h5>
+                                        <h4 class="card-text">The first time I climbed a rock wall, I cried.</h4>
+                                    </div>
+                                    <h6 class="mb-2 text-muted text-right">Added 12/06/2018</h6>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Laura Fairfeild</h5>
+                                        <h4 class="card-text">I still can't tell my left from my right sometimes.</h4>
+                                    </div>
+                                    <h6 class="mb-2 text-muted text-right">Added 12/06/2018</h6>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Douglas Toog</h5>
+                                        <h4 class="card-text">I wet the bed until I was 8!</h4>
+                                    </div>
+                                    <h6 class="card-subtitle mb-2 text-muted text-right">Added 12/06/2018</h6>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{this.name}}</h5>
+                                        <h4 class="card-text">{{this.shame}}</h4>
+                                    </div>
+                                    <h6 class="mb-2 text-muted text-right">Added {{this.dateAdded}}</h6>
+                                </div>
+                            </li>
+                            <!--{{/each}}-->
+                            <span class="rounded-0"></span>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div id="voteapp">
+        <div class="container-fluid">
+            <div class="row"></div>
+            <ul class="list-group">
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
