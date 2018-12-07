@@ -1,0 +1,17 @@
+.list-group-item {
+  line-height: 2.5;
+}
+
+.bg {
+  background-image: url("background2.jpg");
+  /* The image used */
+  
+
+  /* Full height 
+  height: 100%; 
+
+   Center and scale the image nicely 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
