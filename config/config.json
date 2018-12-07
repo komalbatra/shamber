@@ -1,19 +1,10 @@
-// We will need to research this more. For the moment, I'm adding stuff that Keith shared during class. This is to ensure 1. we do not share our passwords, 2. we can use our individual passwords. 
-
 {
   "development": {
     "use_env_variable":"DATABASE_URL",
-    // "username": "root",
-    // "password": null,
-    // "database": "exampledb",
-    // "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "testdb",
-    "host": "localhost",
+    "use_env_variable":"DATABASE_URL",
     "dialect": "mysql",
     "logging": false
   },
