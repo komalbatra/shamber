@@ -14,11 +14,11 @@ module.exports = function(app) {
   // Each of the below routes just handles the HTML page that the user gets sent to.
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/input.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   app.get("/wall", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/wall.html"));
+    res.sendFile(path.join(__dirname, "../public/wallofshame.html"));
   });
 
   // Render 404 page for any unmatched routes
@@ -27,13 +27,7 @@ module.exports = function(app) {
   });
 };
 
-
-
-
-
-
-
-// ORIGINAL ROUTES FROM HOMEWORK TEMPLATE
+/* ORIGINAL ROUTES FROM HOMEWORK TEMPLATE
   app.get("/", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("index", {
@@ -60,4 +54,4 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
-};
+};*/
