@@ -3,10 +3,6 @@
 {
   "development": {
     "use_env_variable":"DATABASE_URL",
-    // "username": "root",
-    // "password": null,
-    // "database": "exampledb",
-    // "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
