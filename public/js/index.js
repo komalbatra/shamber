@@ -1,4 +1,4 @@
-// Get references to page elements
+/*// Get references to page elements
 var $nameText = $("#user_name");
 var $shameText = $("#user_shame");
 var $submitBtn = $("#submit_btn");
@@ -116,8 +116,9 @@ var newRow = $("<tr>").append(
   $("<td>").text(newMsg.name),
   $("<td>").text(newMsg.shame),
 );
+*/
 
-/*THIS CODE WORKS TO GET DATA INTO THE DB: MNC
+//THIS CODE WORKS TO GET DATA INTO THE DB: MNC
 $(document).ready(function() {
   var $nameText = $("#user_name");
   var $shameText = $("#user_shame");
@@ -134,4 +135,4 @@ $(document).ready(function() {
 
     $.post("/api/shames", shameInput);
   }
-});*/
+});
