@@ -133,4 +133,8 @@ $(document).ready(function() {
 
     $.post("/api/shames", shameInput);
   }
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 3b54ebccfe50f2c7f5bfcc1dc31dc781355d3f39
