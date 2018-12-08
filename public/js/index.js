@@ -3,8 +3,8 @@ $(document).ready(function() {
   var $nameText = $("#user_name");
   var $shameText = $("#user_shame");
 
-  $(document).on("submit", insertShame);
-
+  $("#submit_btn").on("submit", insertShame);
+  event.preventDefault();
   function insertShame(event) {
     event.preventDefault();
     var shameInput = {

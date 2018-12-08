@@ -4,14 +4,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [25]
+        len: [1]
       }
     },
     shame: {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
-        len: [100]
+        len: [1]
       }
     },
     score: {
