@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS shamber_db;
+
 CREATE DATABASE shamber_db;

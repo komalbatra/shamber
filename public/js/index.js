@@ -1,4 +1,4 @@
-// Get references to page elements
+/*// Get references to page elements
 var $nameText = $("#user_name");
 var $shameText = $("#user_shame");
 var $submitBtn = $("#submit_btn");
@@ -113,4 +113,21 @@ $submitBtn.on("click", (function(event){
 var newRow = $("<tr>").append(
   $("<td>").text(newMsg.name),
   $("<td>").text(newMsg.shame),
-);
+);*/
+$(document).ready(function() {
+  var $nameText = $("#user_name");
+  var $shameText = $("#user_shame");
+
+  $(document).on("submit", insertShame);
+
+  function insertShame(event) {
+    event.preventDefault();
+    var shameInput = {
+      name: $nameText.val().trim(),
+      shame: $shameText.val().trim(),
+      score: 1
+    };
+
+    $.post("/api/shames", shameInput);
+  }
+});
