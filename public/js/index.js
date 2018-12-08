@@ -58,8 +58,6 @@ var refreshEntries = function() {
 
       return $li;
     });
-
-    window.location.href = "http://theshamber.com/wallofshame";
   });
 };
 // handleNavBar is called to make nav bar function
