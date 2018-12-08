@@ -5,12 +5,11 @@
 // Dependencies
 // =============================================================
 var path = require("path");
-var db = require("../models");
+//var db = require("../models");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
-
   // Each of the below routes just handles the HTML page that the user gets sent to.
   // index route loads view.html
   app.get("/", function(req, res) {
@@ -26,12 +25,6 @@ module.exports = function(app) {
     res.render("404");
   });
 };
-
-
-
-
-
-
 
 /* ORIGINAL ROUTES FROM HOMEWORK TEMPLATE
   app.get("/", function(req, res) {
