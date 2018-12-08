@@ -1,17 +1,17 @@
 module.exports = function(sequelize, DataTypes) {
-  var Shamber = sequelize.define("share_a_shame", {
+  var Shamber = sequelize.define("Shamber", {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
+        len: [25]
       }
     },
     shame: {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
-        len: [1]
+        len: [100]
       }
     },
     score: {

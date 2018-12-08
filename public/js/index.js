@@ -1,118 +1,118 @@
-// Get references to page elements
-var $nameText = $("#user_name");
-var $shameText = $("#user_shame");
-var $submitBtn = $("#submit_btn");
-var $shameList = $("#shame-list");
+// THIS CODE WORKS TO GET DATA INTO THE DB: MNC
+$(document).ready(function() {
+  var $nameText = $("#user_name");
+  var $shameText = $("#user_shame");
 
-var newMsg = {
-  name: $nameText,
-  shame: $shameText
-}
+  $(document).on("submit", insertShame);
 
-// The API object contains methods for each kind of request we'll make
-var API = {
-  saveEntries: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/entries",
-      data: JSON.stringify(example)
-    });
-  },
-  getExamples: function() {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
+  function insertShame(event) {
+    event.preventDefault();
+    var shameInput = {
+      name: $nameText.val().trim(),
+      shame: $shameText.val().trim(),
+      score: 1
+    };
+
+    $.post("/api/shames", shameInput);
   }
-};
+});
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshEntries = function() {
-  API.getEntries().then(function(data) {
-    var $entries = data.map(function(entry) {
-      var $a = $("<a>")
-        .text(entry.text)
-        .attr("href", "/entry/" + entry.id);
+// // Get references to page elements
+// var $exampleText = $("#example-text");
+// var $exampleDescription = $("#example-description");
+// var $submitBtn = $("#submit");
+// var $exampleList = $("#example-list");
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": entry.id
-        })
-        .append($a);
+// // The API object contains methods for each kind of request we'll make
+// var API = {
+//   saveExample: function(example) {
+//     return $.ajax({
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       type: "POST",
+//       url: "api/examples",
+//       data: JSON.stringify(example)
+//     });
+//   },
+//   getExamples: function() {
+//     return $.ajax({
+//       url: "api/examples",
+//       type: "GET"
+//     });
+//   },
+//   deleteExample: function(id) {
+//     return $.ajax({
+//       url: "api/examples/" + id,
+//       type: "DELETE"
+//     });
+//   }
+// };
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+// // refreshExamples gets new examples from the db and repopulates the list
+// var refreshExamples = function() {
+//   API.getExamples().then(function(data) {
+//     var $examples = data.map(function(example) {
+//       var $a = $("<a>")
+//         .text(example.text)
+//         .attr("href", "/example/" + example.id);
 
-      $li.append($button);
+//       var $li = $("<li>")
+//         .attr({
+//           class: "list-group-item",
+//           "data-id": example.id
+//         })
+//         .append($a);
 
-      return $li;
-    });
+//       var $button = $("<button>")
+//         .addClass("btn btn-danger float-right delete")
+//         .text("ｘ");
 
-    window.location.href = "http://theshamber.com/wallofshame";
-  });
-};
-// handleNavBar is called to make nav bar function
-var handleNavBar = function(event) {
-  event
-}
-// handleFormSubmit is called whenever we submit a new name and shame
-// Save the new N&S to the db and refresh the list
-var handleFormSubmit = function(event) {
-  event.preventDefault();
+//       $li.append($button);
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
+//       return $li;
+//     });
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
+//     $exampleList.empty();
+//     $exampleList.append($examples);
+//   });
+// };
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
+// // handleFormSubmit is called whenever we submit a new example
+// // Save the new example to the db and refresh the list
+// var handleFormSubmit = function(event) {
+//   event.preventDefault();
 
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
+//   var example = {
+//     text: $exampleText.val().trim(),
+//     description: $exampleDescription.val().trim()
+//   };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
+//   if (!(example.text && example.description)) {
+//     alert("You must enter an example text and description!");
+//     return;
+//   }
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
+//   API.saveExample(example).then(function() {
+//     refreshExamples();
+//   });
 
-// Add event listeners to the submit and delete buttons
-//$submitBtn.on("click", handleFormSubmit);
+//   $exampleText.val("");
+//   $exampleDescription.val("");
+// };
 
-$submitBtn.on("click", (function(event){
-  event.preventDefault();
-  $('#page').animate({opacity:0},400, function(){
-    handleFormSubmit();
-  });
-}));
-//$exampleList.on("click", ".delete", handleDeleteBtnClick);
+// // handleDeleteBtnClick is called when an example's delete button is clicked
+// // Remove the example from the db and refresh the list
+// var handleDeleteBtnClick = function() {
+//   var idToDelete = $(this)
+//     .parent()
+//     .attr("data-id");
 
-var newRow = $("<tr>").append(
-  $("<td>").text(newMsg.name),
-  $("<td>").text(newMsg.shame),
-);
+//   API.deleteExample(idToDelete).then(function() {
+//     refreshExamples();
+//   });
+// };
+
+// // Add event listeners to the submit and delete buttons
+// $submitBtn.on("click", handleFormSubmit);
+// $exampleList.on("click", ".delete", handleDeleteBtnClick);
