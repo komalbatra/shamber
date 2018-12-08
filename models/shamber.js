@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Shamber = sequelize.define("share_a_shame", {
+  var Shamber = sequelize.define("Shamber", {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
