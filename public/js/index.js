@@ -116,3 +116,22 @@ var newRow = $("<tr>").append(
   $("<td>").text(newMsg.name),
   $("<td>").text(newMsg.shame),
 );
+
+/*THIS CODE WORKS TO GET DATA INTO THE DB: MNC
+$(document).ready(function() {
+  var $nameText = $("#user_name");
+  var $shameText = $("#user_shame");
+
+  $(document).on("submit", insertShame);
+
+  function insertShame(event) {
+    event.preventDefault();
+    var shameInput = {
+      name: $nameText.val().trim(),
+      shame: $shameText.val().trim(),
+      score: 1
+    };
+
+    $.post("/api/shames", shameInput);
+  }
+});*/

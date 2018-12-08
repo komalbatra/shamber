@@ -27,6 +27,12 @@ module.exports = function(app) {
   });
 };
 
+
+
+
+
+
+
 /* ORIGINAL ROUTES FROM HOMEWORK TEMPLATE
   app.get("/", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
@@ -54,4 +60,4 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
-};*/
+}; */
