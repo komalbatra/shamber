@@ -24,10 +24,20 @@ module.exports = function(app) {
 /* *********************************************************************************
 // apiRoutes.js - this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
+<<<<<<< HEAD
 // Dependencies
 // =============================================================
 // Requiring our models
 var Shame = require("../models");
+=======
+
+// Dependencies
+// =============================================================
+
+// Requiring our models
+var Shame = require("../models");
+
+>>>>>>> master
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -39,10 +49,18 @@ module.exports = function(app) {
       res.json(results);
     });
   });
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   // Add a shame
   app.post("/api/shames", function(req, res) {
     console.log("Shame Data:");
     console.log(req.body);
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     Shame.Shamber.create({
       name: req.body.name,
       shame: req.body.shame,
@@ -58,6 +76,10 @@ module.exports = function(app) {
       });
   });
 };
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 /* ORIGINAL ROUTES FROM HOMEWORK TEMPLATE
 module.exports = function(app) {
   // Get all examples
@@ -82,4 +104,8 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+<<<<<<< HEAD
 }; */
+=======
+}; */
+>>>>>>> master

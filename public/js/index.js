@@ -113,7 +113,14 @@ $submitBtn.on("click", (function(event){
 var newRow = $("<tr>").append(
   $("<td>").text(newMsg.name),
   $("<td>").text(newMsg.shame),
+<<<<<<< HEAD
 );*/
+=======
+);
+*/
+
+//THIS CODE WORKS TO GET DATA INTO THE DB: MNC
+>>>>>>> master
 $(document).ready(function() {
   var $nameText = $("#user_name");
   var $shameText = $("#user_shame");
@@ -130,4 +137,8 @@ $(document).ready(function() {
 
     $.post("/api/shames", shameInput);
   }
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> master
