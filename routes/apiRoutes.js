@@ -13,7 +13,7 @@ module.exports = function(app) {
     db.Shamber.create({
       name: req.body.name,
       shame: req.body.shame,
-      score: req.body.score      
+      score: req.body.score
     }).then(function(dbShamber) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(dbShamber);
