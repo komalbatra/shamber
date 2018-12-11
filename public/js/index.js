@@ -1,7 +1,13 @@
+// Added in some code that may be useful for index.js file.  See all Mary adds below
 $(document).ready(function() {
+  //DECLARING VARIABLES
   var $nameText = $("#user_name");
   var $shameText = $("#user_shame");
+  var $shameContainer = $("#shame-list");
+  var shames;
 
+  //ALL FUNCTIONS
+  //_________________________________
   //Function for capturing user input
   function insertShame(event) {
     event.preventDefault();
@@ -31,6 +37,45 @@ $(document).ready(function() {
       return;
     }
   }
+
+  // Function for grabbing shames from database and updating wall
+  function getShames() {
+    $.get("/api/shames", function(data) {
+      console.log("Shames", data);
+      shames = data;
+      if (shames.length < 1) {
+        alert("This sucks! No shames have been shared yet!");
+      } else {
+        initializeRows();
+      }
+    });
+  }
+
+  // Function for appending shames inside shame container
+  function initializeRows() {
+    $shameContainer.empty();
+    for (i = 0; i < shames.length; i++) {
+      var messageH2 = $("<h5>");
+      messageH2.css({
+        "text-align": "center",
+        "margin-top": "30px",
+        color: "white"
+      });
+      messageH2.html(
+        "Name: " +
+          shames[i].name +
+          "<br>" +
+          "Shame: " +
+          shames[i].shame +
+          "<br>" +
+          "---->Posted On:" +
+          shames[i].createdAt //Can anyone fix this date format without moment.js?
+      );
+      $shameContainer.append(messageH2);
+    }
+  }
   //Event listener
   $(document).on("submit", insertShame);
+
+  getShames();
 });
