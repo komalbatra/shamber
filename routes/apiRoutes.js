@@ -1,7 +1,7 @@
 // Requiring our Shamber model
 var db = require("../models");
 
-// Routes
+// API Routes
 // =============================================================
 module.exports = function(app) {
   // POST route for saving a new shame
