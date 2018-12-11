@@ -1,11 +1,13 @@
+// Added in some code that may be useful for index.js file.  See all Mary adds below
 $(document).ready(function() {
+  //DECLARING VARIABLES
   var $nameText = $("#user_name");
   var $shameText = $("#user_shame");
-  var $shameContainer = $("#shame-list"); //(Mary add)
-  var shames; //(Mary add)
+  var $shameContainer = $("#shame-list");
+  var shames;
 
-  getShames();
-
+  //ALL FUNCTIONS
+  //_________________________________
   //Function for capturing user input
   function insertShame(event) {
     event.preventDefault();
@@ -35,39 +37,45 @@ $(document).ready(function() {
       return;
     }
   }
-  //Mary's Code
+
+  // Function for grabbing shames from database and updating wall
   function getShames() {
     $.get("/api/shames", function(data) {
       console.log("Shames", data);
       shames = data;
-      if (!shames || !shames.length) {
-        displayEmpty();
+      if (shames.length < 1) {
+        alert("This sucks! No shames have been shared yet!");
       } else {
         initializeRows();
       }
     });
   }
-  // Function for appending shames inside shame container (MARY add)
+
+  // Function for appending shames inside shame container
   function initializeRows() {
     $shameContainer.empty();
-    var shamesToAdd = [];
-    for (var i = 0; i < shames.length; i++) {
-      console.log(shamesToAdd);
-      //shamesToAdd.push(createNewRow(shames[i]));
+    for (i = 0; i < shames.length; i++) {
+      var messageH2 = $("<h5>");
+      messageH2.css({
+        "text-align": "center",
+        "margin-top": "30px",
+        color: "white"
+      });
+      messageH2.html(
+        "Name: " +
+          shames[i].name +
+          "<br>" +
+          "Shame: " +
+          shames[i].shame +
+          "<br>" +
+          "---->Posted On:" +
+          shames[i].createdAt //Can anyone fix this date format without moment.js?
+      );
+      $shameContainer.append(messageH2);
     }
-    $shameContainer.append(shamesToAdd);
   }
-  // This function displays a message when there are no shames (MARY add)
-  function displayEmpty() {
-    $shameContainer.empty();
-    var messageH2 = $("<h2>");
-    messageH2.css({ "text-align": "center", "margin-top": "50px" });
-    messageH2.html(
-      "No shames yet for this category, navigate <a href='/'>here</a> in order to create a new shame."
-    );
-    $shameContainer.append(messageH2);
-  }
-  //__________________
   //Event listener
   $(document).on("submit", insertShame);
+
+  getShames();
 });
