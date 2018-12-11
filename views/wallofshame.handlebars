@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-8 offset-2">
     <h3 class="text-center">Names and Shames: New</h3>
-    <ul id="shame-list" class="list-group scroll">
+    <ul id="shame-list">
       <span class="rounded-0"></span>
       <!--{{#each entries}}-->
       <li data-id="{{this.id}}" class="list-group-item">
@@ -16,10 +16,13 @@
       <!--{{/each}}-->
       <span class="rounded-0"></span>
     </ul>
-    <h3 class="text-center">Names and Shames: Top</h3>
-    <ul id="shame-list" class="list-group scroll">
+
+    {{!-- FOR NEXT RELEASE: PARTIAL CODE FOR BACKLOG ITEM #3--}}
+    {{!-- ----------------------------------------------- --}}
+    {{!-- <h3 class="text-center">Names and Shames: Top</h3>
+    <ul id="shame-list2" class="list-group scroll">
       <span class="rounded-0"></span>
-      <!--{{#each entries}}-->
+      {{#each entries}}
       <li data-id="{{this.id}}" class="list-group-item">
         <div class="card">
           <div class="card-body">
@@ -29,8 +32,9 @@
           <h6 class="mb-2 text-muted text-right">Added {{this.dateAdded}}</h6>
         </div>
       </li>
-      <!--{{/each}}-->
+      {{/each}}
       <span class="rounded-0"></span>
-    </ul>
+    </ul> --}}
   </div>
 </div>
+<script src="js/index.js"></script>
