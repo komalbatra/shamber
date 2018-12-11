@@ -1,23 +1,16 @@
-// *********************************************************************************
-// htmlRoutes.js - this file offers a set of routes for sending users to the various html pages
-// *********************************************************************************
-
-// Dependencies
-// =============================================================
-var path = require("path");
-//var db = require("../models");
-
-// Routes
+// HTML Routes
 // =============================================================
 module.exports = function(app) {
-  // Each of the below routes just handles the HTML page that the user gets sent to.
-  // index route loads view.html
+  // Route to the shareashame handlebar view
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.render("shareashame", {
+      msg: "Welcome Mary!"
+    });
   });
 
+  // Route to the wall of shame handlebar view
   app.get("/wall", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/wallofshame.html"));
+    res.render("wallofshame");
   });
 
   // Render 404 page for any unmatched routes
