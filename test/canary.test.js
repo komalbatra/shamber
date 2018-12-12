@@ -1,3 +1,6 @@
+//ATTEMPT AT CREATING TESTS...RAN INTO ISSUES WITH PACKAGE CONFLICTS.
+//LEAVING IT HERE FOR FUTURE USE
+// __________________________________________________________________
 // /* eslint-disable no-unused-vars */
 // var chai = require("chai");
 // var chaiHttp = require("chai-http");
